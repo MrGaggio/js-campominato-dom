@@ -1,0 +1,27 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body{
+    background-color: grey;
+}
+
+.container{
+    width: 1000px;
+    margin: 200px auto;
+    display: flex;
+    flex-wrap: wrap;
+    
+
+}
+
+.quadrato{
+    height: 100px;
+    width: 100px;
+    border: 1px solid white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
