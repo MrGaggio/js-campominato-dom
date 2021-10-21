@@ -29,8 +29,8 @@ Al termine della partita il software deve scoprire tutte le bombe e comunicare i
 //Il computer deve generare 16 numeri casuali nello stesso range della difficoltà prescelta: le bombe.
 
 function casualBombs(min, max) {
-    return Math.floor(Math.random() * (1 - 100) ) + 1;
-  }
+    return Math.floor(Math.random() * (1 - 100)) + 1;
+}
 
 // DOM elements selection
 
@@ -39,21 +39,68 @@ const selectLevelElement = document.getElementById('level');
 
 // Event Listener
 
-playBtnElement.addEventListener('click', function(){
+playBtnElement.addEventListener('click', function () {
     console.log('cliccato su play, avviare il gioco');
-    console.log(selectLevelElement.value)
 
+
+    /*     // Select the game level
+        const level = selectLevelElement.value
+        let cellsNumber;
+
+        // Check the level and define grid dimention
+        if (level == '1'){
+            console.log('easy level');
+            cellsNumber = 100;
+        } else if (level == '2'){
+            console.log('medium level');
+            cellsNumber = 81;
+
+        } else if ( level == '3'){
+            console.log('hard level');
+            cellsNumber = 49;
+        } */
+
+
+    // Select the game Level
+    const grid_cells = selectLevel(selectLevelElement)
+
+    // Genera la griglia
+    genGrid(grid_cells)
 })
 
+
+// FUNZIONI
+
+
+function selectLevel(domElement) {
+
+    // Select the game level
+    const level = domElement.value
+    let cellsNumber;
+
+    // Check the level and define grid dimention
+    if (level == '1') {
+        console.log('easy level');
+        cellsNumber = 100;
+    } else if (level == '2') {
+        console.log('medium level');
+        cellsNumber = 81;
+
+    } else if (level == '3') {
+        console.log('hard level');
+        cellsNumber = 49;
+    }
+    console.log(cellsNumber);
+}
 
 
 /* let playerLv = prompt("Scegli il lv di difficolta' tra 1 e 3") */
 
-/* let contenitore_quadrati = document.querySelector(".container")
+/*  let contenitore_quadrati = document.querySelector(".container")
 
 
 
-if (playerLv == 1) {
+if ( level == 1) {
     for (let i = 1; i <= 100; i++) {
         let myDiv = document.createElement("div")
         myDiv.className = 'quadrato'
@@ -65,7 +112,7 @@ if (playerLv == 1) {
         })
     
     }
-}else if (playerLv == 2 ){
+}else if (level == 2 ){
     for (let i = 1; i <= 81; i++) {
         let myDiv = document.createElement("div")
         myDiv.className = 'quadrato'
@@ -77,7 +124,7 @@ if (playerLv == 1) {
         })
        
     }
-}else if (playerLv == 3 ){
+}else if (level == 3 ){
     for (let i = 1; i <= 49; i++) {
         let myDiv = document.createElement("div")
         myDiv.className = 'quadrato'
@@ -89,7 +136,4 @@ if (playerLv == 1) {
         })
         
     }
-}
-
-
- */
+} */
