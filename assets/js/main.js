@@ -32,8 +32,24 @@ function casualBombs(min, max) {
     return Math.floor(Math.random() * (1 - 100) ) + 1;
   }
 
+// DOM elements selection
+
+const playBtnElement = document.querySelector('.controls > button');
+const selectLevelElement = document.getElementById('level');
+
+// Event Listener
+
+playBtnElement.addEventListener('click', function(){
+    console.log('cliccato su play, avviare il gioco');
+    console.log(selectLevelElement.value)
+
+})
+
+
+
 /* let playerLv = prompt("Scegli il lv di difficolta' tra 1 e 3") */
-let contenitore_quadrati = document.querySelector(".container")
+
+/* let contenitore_quadrati = document.querySelector(".container")
 
 
 
@@ -76,3 +92,4 @@ if (playerLv == 1) {
 }
 
 
+ */

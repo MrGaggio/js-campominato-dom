@@ -4,11 +4,13 @@
     box-sizing: border-box;
 }
 body{
-    background-color: grey;
+    background-color: lightgray;
 }
 
 .container{
-    margin: 200px auto;
+    height: 100%;
+    justify-content: center;
+    align-items: center;
     display: flex;
     flex-wrap: wrap;
     
@@ -38,6 +40,7 @@ main{
 }
 
 footer{
+    background-color: white;
     height: 80px;
     display: flex;
     align-items: center;
