@@ -36,6 +36,7 @@ function casualBombs(min, max) {
 
 const playBtnElement = document.querySelector('.controls > button');
 const selectLevelElement = document.getElementById('level');
+const selectGridContainerEl = document.querySelector('main > .container')
 
 // Event Listener
 
@@ -65,7 +66,23 @@ playBtnElement.addEventListener('click', function () {
     const grid_cells = selectLevel(selectLevelElement)
 
     // Genera la griglia
-    genGrid(grid_cells)
+    
+       // - Query selector
+       // - Ciclo For
+       // - Create Element / Append
+
+    for ( let i = 1; i <= grid_cells; i++ ){
+        const divEl = document.createElement('div')
+        divEl.append(i)
+        console.log(divEl);
+        selectGridContainerEl.append(divEl)
+    }
+        
+    
+
+    // Selezionare contenitore della griglia
+
+    // Creare le celle della griglia
 })
 
 
