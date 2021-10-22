@@ -17,13 +17,12 @@ body{
 
 }
 
-.quadrato{
-    height: 100px;
-    width: 100px;
-    border: 1px solid white;
+.cell{
+    border: 1px solid black;
     display: flex;
     justify-content: center;
     align-items: center;
+
 }
 
 header{
