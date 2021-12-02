@@ -20,6 +20,7 @@ let minNumber = 1;
 const containerGrid = document.getElementById('griglia')
 
 
+
 // Selezione elementi Dom
 let selectLevel = document.getElementById("difficolta")
 let buttonPlay = document.getElementById('button')
@@ -27,8 +28,9 @@ let buttonPlay = document.getElementById('button')
 //funzione che al click seleziona il lv e in base al lv seleziona il tipo di griglia
 buttonPlay.addEventListener('click', function () {
     containerGrid.innerHTML = ""
-    const level = selectLevel.value
+    let level = selectLevel.value
         if (level == "easy") {
+
         numberSquare = 100;
         row = 10;
         col = 10;
@@ -42,6 +44,7 @@ buttonPlay.addEventListener('click', function () {
         row = 7;
         col = 7; 
     }
+
 
     for (let i = 1; i <= numberSquare; i++) {
         const square = document.createElement('div')
@@ -66,13 +69,52 @@ BONUS:
 2- quando si clicca su una bomba e finisce la partita, il software scopre tutte le bombe nascoste
 */
 
-// creare 2 array di numeri e confrontare il primo con il secondo. Se nel secondo non è presente il numero pusharlo nel primo (ciclo while)
+// creare 16 numeri casuali unici tra:
+// 1 e 100 
+// 1 e 81
+// 1 e 49
 
+
+
+// array dove verranno pushate le 16 bombe con numeri unici
+const bombs = []
+
+for (let i = 1; i < 16; i++) {
+    //numero random da 1 a 16
+    const bomb = Math.floor(Math.random() * 100) + 1
+    // valutare se il numero è presente nell'array altrimenti lo pusha
+    if (!bombs.includes(bomb)){
+        bombs.push(bomb)
+    } else {
+
+    }
+}
+
+console.log(bombs);
+
+
+
+
+// array di controllo
+// let checkBombs = []
+
+// for (let i = 1; i <= 16; i++) {
+
+//     if (numberSquare == 100) {
+//         Math.floor(Math.random() * 100) + 1;
+//     } else if (numberSquare == 81) {
+//         Math.floor(Math.random() * 81) + 1;
+//     } else if(numberSquare == 49){
+//         Math.floor(Math.random() * 81) + 1;
+//     }
+//     console.log(i);
     
+// }
 
 
+// funzione crea bombe
 
 
-
-
+// Sino a che il livello è Easy, crea 16 bombe tra 1 e 100
+// Sino a che il livello è medium, crea 16 bombe 
 
