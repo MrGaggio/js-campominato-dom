@@ -1,0 +1,65 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+
+.header{
+    height: 100px;
+    margin: auto;
+}
+
+h1{
+    align-self: center;
+}
+
+.select_wrap{
+    align-self: center;
+    justify-content: end;
+
+}
+
+
+.button{
+    align-self: center;
+    justify-content: end;
+    width: 100px;
+}
+
+
+.container-fluid{
+    background-color: aquamarine;
+    height: calc(100vh - 150px);
+    padding-top: 150px;
+}
+
+
+footer{
+    height: 50px;
+    line-height: 50px;
+    margin-left: 20px;
+}
+
+#griglia{
+    margin: auto;
+    height: 500px;
+    width: 500px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.square {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: calc(100% / var(--square-size)); /*possiamo cambiare numero square con variabile*/
+    height: calc(100% / var(--square-size));
+    cursor: pointer;
+    border: 1px solid black;
+  }
+
+  .blu{
+      background-color: blue;
+  }
+
