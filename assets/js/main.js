@@ -78,8 +78,8 @@ BONUS:
 
 // array dove verranno pushate le 16 bombe con numeri unici
 const bombs = []
-
-for (let i = 1; i < 16; i++) {
+const bomb = Math.floor(Math.random() * 100) + 1
+/* for (let i = 1; i < 16; i++) {
     //numero random da 1 a 16
     const bomb = Math.floor(Math.random() * 100) + 1
     // valutare se il numero è presente nell'array altrimenti lo pusha
@@ -90,31 +90,15 @@ for (let i = 1; i < 16; i++) {
     }
 }
 
-console.log(bombs);
+console.log(bombs); */
 
 
 
+while (bombs.length < 16 ) {
+    if (!bombs.includes(bomb)) {
+        bombs.push(bomb)
+    } else{
 
-// array di controllo
-// let checkBombs = []
+    }
 
-// for (let i = 1; i <= 16; i++) {
-
-//     if (numberSquare == 100) {
-//         Math.floor(Math.random() * 100) + 1;
-//     } else if (numberSquare == 81) {
-//         Math.floor(Math.random() * 81) + 1;
-//     } else if(numberSquare == 49){
-//         Math.floor(Math.random() * 81) + 1;
-//     }
-//     console.log(i);
-    
-// }
-
-
-// funzione crea bombe
-
-
-// Sino a che il livello è Easy, crea 16 bombe tra 1 e 100
-// Sino a che il livello è medium, crea 16 bombe 
-
+}
