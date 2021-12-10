@@ -29,27 +29,25 @@ let buttonPlay = document.getElementById('button')
 buttonPlay.addEventListener('click', function () {
     containerGrid.innerHTML = ""
     let level = selectLevel.value
-        if (level == "easy") {
-
+    if (level == "easy") {
         numberSquare = 100;
         row = 10;
         col = 10;
-    } else if(level == "medium") {
+    } else if (level == "medium") {
         numberSquare = 81;
         row = 9;
         col = 9;
-    
-    } else if(level == "hard") {
+    } else if (level == "hard") {
         numberSquare = 49;
         row = 7;
-        col = 7; 
+        col = 7;
     }
 
 
     for (let i = 1; i <= numberSquare; i++) {
         const square = document.createElement('div')
         //cambio colore al click
-        square.addEventListener('click',function () {
+        square.addEventListener('click', function () {
             this.classList.add('blu')
         })
         //do al div la classe square
@@ -57,7 +55,7 @@ buttonPlay.addEventListener('click', function () {
         square.style.width = `calc(100% / ${col})`;
         square.style.height = `calc(100% / ${row})`;
         square.append(i)
-        containerGrid.append(square)   
+        containerGrid.append(square)
     }
 })
 
@@ -75,46 +73,46 @@ BONUS:
 // 1 e 49
 
 
+// creare un array con 16 numeri casuali unici
 
-// array dove verranno pushate le 16 bombe con numeri unici
+
 const bombs = []
 
-for (let i = 1; i < 16; i++) {
-    //numero random da 1 a 16
-    const bomb = Math.floor(Math.random() * 100) + 1
-    // valutare se il numero è presente nell'array altrimenti lo pusha
-    if (!bombs.includes(bomb)){
+
+// funzione che ritorna un numero casuale compreso tra un minimo e un max
+function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min + 1) ) + min;
+    
+  }
+
+
+
+/*      // sino a che bombe non arriva a 16
+    while (bombs.length < 16) {
+        const bomb = getRndInteger(1, 100)
         bombs.push(bomb)
-    } else {
+        // se la bomba non è inclusa, includila
+        if (!bombs.includes(bomb)) {
+            bombs.push(bomb)
+        }
+    } */
+  
+
+
+    // creare una funzione per creare le bombe nel range del livello selezionato
+
+    function makeBombs (min, max) {
+    // sino a che bombe non arriva a 16
+    while (bombs.length < 16) {
+        const bomb = getRndInteger(min, max)
+        bombs.push(bomb)
+        // se la bomba non è inclusa, includila
+        if (!bombs.includes(bomb)) {
+            bombs.push(bomb)
+        }
+    }   
+    return bombs
 
     }
-}
 
-console.log(bombs);
-
-
-
-
-// array di controllo
-// let checkBombs = []
-
-// for (let i = 1; i <= 16; i++) {
-
-//     if (numberSquare == 100) {
-//         Math.floor(Math.random() * 100) + 1;
-//     } else if (numberSquare == 81) {
-//         Math.floor(Math.random() * 81) + 1;
-//     } else if(numberSquare == 49){
-//         Math.floor(Math.random() * 81) + 1;
-//     }
-//     console.log(i);
-    
-// }
-
-
-// funzione crea bombe
-
-
-// Sino a che il livello è Easy, crea 16 bombe tra 1 e 100
-// Sino a che il livello è medium, crea 16 bombe 
-
+    console.log(makeBombs(1, 100));
